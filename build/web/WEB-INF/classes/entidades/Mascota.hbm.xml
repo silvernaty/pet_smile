@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-09-2021 23:13:17 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entidades.Mascota" table="mascota" catalog="pet_smile" optimistic-lock="version">
+        <id name="idMascota" type="java.lang.Integer">
+            <column name="idMascota" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="due&#241;o" class="entidades.Due&#241;o" fetch="select">
+            <column name="rut" />
+        </many-to-one>
+        <property name="tipoMascota" type="string">
+            <column name="tipoMascota" length="45" />
+        </property>
+        <property name="edad" type="string">
+            <column name="edad" length="45" />
+        </property>
+        <property name="nombreMascota" type="string">
+            <column name="nombreMascota" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>
